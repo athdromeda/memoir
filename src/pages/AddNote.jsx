@@ -2,15 +2,12 @@ import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import EditNoteButton from '../components/EditNoteButton';
 import { addNote } from '../noteSlice';
-
-function generateNoteId() {
-  return new Date().getTime();
-}
+import generateNoteId from '../utils/generateNoteId';
 
 const AddNote = () => {
   const title = useRef('');
   const content = useRef('');
-  
+
   const dispatch = useDispatch();
   const handleClick = () => {
     if (title.current.value && content.current.value) {

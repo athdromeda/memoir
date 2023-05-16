@@ -20,10 +20,14 @@ const noteSlice = createSlice({
   reducers: {
     addNote: (state, action) => {
       state.push(action.payload);
-      state = state.sort((a, b) => b.id - a.id);
+      return state.sort((a, b) => b.id - a.id);
+    },
+    deleteNote: (state, action) => {
+      const id = action.payload;
+      return state.filter((note) => note.id !== id);
     },
   },
 });
 
-export const { addNote } = noteSlice.actions;
+export const { addNote, deleteNote } = noteSlice.actions;
 export default noteSlice.reducer;

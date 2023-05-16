@@ -12,7 +12,7 @@ function Home() {
       <Header />
       <NotesWrapper>
         {notes.map((note, index) => (
-          <Note key={index} title={note.title} content={note.content} />
+          <Note key={index} title={note.title} content={note.content} id={note.id} />
         ))}
       </NotesWrapper>
       <AddNoteButton />
