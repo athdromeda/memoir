@@ -1,52 +1,13 @@
-/* eslint-disable react/prop-types */
-
-import { Children } from 'react';
-import { useNavigate } from 'react-router-dom';
 import AddNoteButton from '../components/AddNoteButton';
-
-const Body = ({ children }) => {
-  const oddCards = Children.toArray(children).filter(
-    (_, index) => index % 2 === 0
-  );
-  const evenCards = Children.toArray(children).filter(
-    (_, index) => index % 2 !== 0
-  );
-
-  return (
-    <div className="m-6 mt-24 grid grid-cols-2 gap-4">
-      <div>{oddCards}</div>
-      <div>{evenCards}</div>
-    </div>
-  );
-};
-
-const Header = () => {
-  return (
-    <div className="p-6 bg-blue-100 w-full fixed">
-      <h1 className="text-xl">Memoir</h1>
-    </div>
-  );
-};
-
-const Note = ({ title, content }) => {
-  const navigate = useNavigate();
-
-  return (
-    <div
-      onClick={() => navigate('/edit')}
-      className="bg-blue-100 w-full px-4 py-3 mb-4 rounded-md cursor-pointer"
-    >
-      <h3 className="text-lg text-blue-600">{title}</h3>
-      <p className="text-slate-500">{content}</p>
-    </div>
-  );
-};
+import NotesWrapper from '../components/NotesWrapper';
+import Header from '../components/Header';
+import Note from '../components/Note';
 
 function Home() {
   return (
     <>
       <Header />
-      <Body>
+      <NotesWrapper>
         <Note
           title={'My note'}
           content={
@@ -65,7 +26,7 @@ function Home() {
         <Note title={'My note 5'} content={'Lorem ipsum dolor sit amet'} />
         <Note title={'My note 6'} content={'Lorem ipsum dolor sit amet'} />
         <Note title={'My note 7'} content={'Lorem ipsum dolor sit amet'} />
-      </Body>
+      </NotesWrapper>
       <AddNoteButton />
     </>
   );
