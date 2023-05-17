@@ -22,17 +22,30 @@ const AddNote = () => {
   };
 
   return (
-    <div className="flex flex-col m-6">
-      <h1>Add Note</h1>
-      <input type="text" placeholder="Title" ref={title} />
-      <textarea
-        cols="30"
-        rows="10"
-        placeholder="Lorem ipsum"
-        ref={content}
-      ></textarea>
-      <EditNoteButton onClick={handleClick} />
-    </div>
+    <>
+      <div className="flex gap-2 px-6 py-4">
+        <button>Back</button>
+        <h1>Add Note</h1>
+      </div>
+      <div className="flex flex-col m-6 mt-0 h-full">
+        <input
+          type="text"
+          placeholder="Title"
+          ref={title}
+          onFocus={(e) => e.target.select()}
+          className="text-blue-500 border-b-2 mb-3 py-2 font-bold focus:outline-none focus:border-b-blue-400"
+        />
+        <textarea
+          cols="30"
+          rows="10"
+          placeholder="Lorem ipsum"
+          ref={content}
+          spellCheck={false}
+          className="focus:outline-none focus:bg-blue-50 focus:py-2 focus:px-3 h-full"
+        ></textarea>
+        <EditNoteButton onClick={handleClick} />
+      </div>
+    </>
   );
 };
 

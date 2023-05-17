@@ -10,7 +10,7 @@ const NotesWrapper = ({ children }) => {
   );
 
   return (
-    <div className="m-6 mt-24 grid grid-cols-2 gap-4">
+    <div className="m-6 mt-16 grid grid-cols-2 gap-4">
       <div>{oddCards}</div>
       <div>{evenCards}</div>
     </div>

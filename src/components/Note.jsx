@@ -7,9 +7,9 @@ const Note = ({ id, title, content }) => {
   return (
     <div
       onClick={() => navigate('/edit/' + id)}
-      className="bg-blue-100 w-full px-4 py-3 mb-4 rounded-md cursor-pointer"
+      className="bg-blue-100 w-full px-4 py-4 mb-4 rounded-md cursor-pointer"
     >
-      <h3 className="text-lg text-blue-600">{title}</h3>
+      <h3 className="text-lg text-blue-600 font-medium leading-tight mb-3">{title}</h3>
       <p className="text-slate-500">{content}</p>
     </div>
   );

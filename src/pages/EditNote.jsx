@@ -26,21 +26,30 @@ const EditNote = () => {
   };
 
   return (
-    <div className="flex flex-col m-6">
-      <h1>Edit Note {id}</h1>
-      <input
-        type="text"
-        value={title}
-        onChange={(event) => setTitle(event.target.value)}
-      />
-      <textarea
-        cols="30"
-        rows="10"
-        value={content}
-        onChange={(event) => setContent(event.target.value)}
-      ></textarea>
-      <EditNoteButton onClick={handleClick} />
-    </div>
+    <>
+      <div className="flex gap-2 px-6 py-4">
+        <button>Back</button>
+        <h1>Edit Note</h1>
+      </div>
+      <div className="flex flex-col m-6 mt-0 h-full">
+        <input
+          type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          onFocus={(e) => e.target.select()}
+          className="border-b-2 mb-3 py-2 font-bold focus:outline-none focus:border-b-blue-400 text-blue-500"
+        />
+        <textarea
+          cols="30"
+          rows="15"
+          value={content}
+          onChange={(event) => setContent(event.target.value)}
+          spellCheck={false}
+          className="focus:outline-none focus:bg-blue-50 focus:py-2 focus:px-3 h-full"
+        ></textarea>
+        <EditNoteButton onClick={handleClick} />
+      </div>
+    </>
   );
 };
 
