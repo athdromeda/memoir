@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { ChevronLeft } from 'react-feather';
 import { useDispatch } from 'react-redux';
 import EditNoteButton from '../components/EditNoteButton';
 import { addNote } from '../noteSlice';
@@ -23,10 +24,10 @@ const AddNote = () => {
 
   return (
     <>
-      <div className="flex gap-2 px-6 py-4">
-        <button>Back</button>
-        <h1>Add Note</h1>
-      </div>
+    <div className="flex gap-2 px-4 py-4">
+      <ChevronLeft className='text-blue-500'/>
+      <h1 className='font-light'>Add Note</h1>
+    </div>
       <div className="flex flex-col m-6 mt-0 h-full">
         <input
           type="text"

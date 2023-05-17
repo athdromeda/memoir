@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { ChevronLeft } from 'react-feather';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import EditNoteButton from '../components/EditNoteButton';
@@ -27,9 +28,9 @@ const EditNote = () => {
 
   return (
     <>
-      <div className="flex gap-2 px-6 py-4">
-        <button>Back</button>
-        <h1>Edit Note</h1>
+      <div className="flex gap-2 px-4 py-4">
+        <ChevronLeft className='text-blue-500'/>
+        <h1 className='font-light'>Edit Note</h1>
       </div>
       <div className="flex flex-col m-6 mt-0 h-full">
         <input
