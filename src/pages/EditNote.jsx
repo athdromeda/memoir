@@ -1,12 +1,15 @@
 import { useState } from 'react';
 import { ChevronLeft } from 'react-feather';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import EditNoteButton from '../components/EditNoteButton';
 import { addNote, deleteNote } from '../noteSlice';
 import generateNoteId from '../utils/generateNoteId';
 
 const EditNote = () => {
+  const navigate = useNavigate();
+
   const id = parseInt(useParams().id);
   const notes = useSelector((state) => state.note);
   const note = notes.filter((note) => note.id === id)[0];
@@ -29,8 +32,13 @@ const EditNote = () => {
   return (
     <>
       <div className="flex gap-2 px-4 py-4">
-        <ChevronLeft className='text-blue-500'/>
-        <h1 className='font-light'>Edit Note</h1>
+        <button>
+          <ChevronLeft
+            className="text-blue-500"
+            onClick={() => navigate('/')}
+          />
+        </button>
+        <h1 className="font-light select-none">Edit Note</h1>
       </div>
       <div className="flex flex-col m-6 mt-0 h-full">
         <input

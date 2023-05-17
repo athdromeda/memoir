@@ -1,11 +1,14 @@
 import { useRef } from 'react';
 import { ChevronLeft } from 'react-feather';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import EditNoteButton from '../components/EditNoteButton';
 import { addNote } from '../noteSlice';
 import generateNoteId from '../utils/generateNoteId';
 
 const AddNote = () => {
+  const navigate = useNavigate();
+
   const title = useRef('');
   const content = useRef('');
 
@@ -24,10 +27,12 @@ const AddNote = () => {
 
   return (
     <>
-    <div className="flex gap-2 px-4 py-4">
-      <ChevronLeft className='text-blue-500'/>
-      <h1 className='font-light'>Add Note</h1>
-    </div>
+      <div className="flex gap-2 px-4 py-4">
+        <button>
+          <ChevronLeft className="text-blue-500" onClick={()=>navigate('/')} />
+        </button>
+        <h1 className="font-light select-none">Add Note</h1>
+      </div>
       <div className="flex flex-col m-6 mt-0 h-full">
         <input
           type="text"
