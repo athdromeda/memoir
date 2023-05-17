@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Trash } from 'react-feather';
 import { ChevronLeft } from 'react-feather';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -29,16 +30,26 @@ const EditNote = () => {
     );
   };
 
+  const handleDelete = () => {
+    dispatch(deleteNote(id));
+    navigate('/');
+  };
+
   return (
     <>
-      <div className="flex gap-2 px-4 py-4">
-        <button>
-          <ChevronLeft
-            className="text-blue-500"
-            onClick={() => navigate('/')}
-          />
+      <div className="flex justify-between px-4 py-4">
+        <div className="flex gap-2">
+          <button>
+            <ChevronLeft
+              className="text-blue-500"
+              onClick={() => navigate('/')}
+            />
+          </button>
+          <h1 className="font-light select-none">Edit Note</h1>
+        </div>
+        <button onClick={handleDelete}>
+          <Trash className="text-pink-500 mr-2" />
         </button>
-        <h1 className="font-light select-none">Edit Note</h1>
       </div>
       <div className="flex flex-col m-6 mt-0 h-full">
         <input
