@@ -8,15 +8,20 @@ function Home() {
   const notes = useSelector((state) => state.note);
 
   return (
-    <>
+    <div className={'w-full h-full flex flex-col'}>
       <Header />
       <NotesWrapper>
         {notes.map((note, index) => (
-          <Note key={index} title={note.title} content={note.content} id={note.id} />
+          <Note
+            key={index}
+            title={note.title}
+            content={note.content}
+            id={note.id}
+          />
         ))}
       </NotesWrapper>
       <AddNoteButton />
-    </>
+    </div>
   );
 }
 

@@ -26,12 +26,15 @@ const AddNote = () => {
   };
 
   return (
-    <>
+    <div className="flex flex-col w-full h-full dark:bg-slate-800">
       <div className="flex gap-2 px-4 py-4">
         <button>
-          <ChevronLeft className="text-blue-500" onClick={()=>navigate('/')} />
+          <ChevronLeft
+            className="text-blue-500"
+            onClick={() => navigate('/')}
+          />
         </button>
-        <h1 className="font-light select-none">Add Note</h1>
+        <h1 className="font-light select-none dark:text-blue-100">Add Note</h1>
       </div>
       <div className="flex flex-col m-6 mt-0 h-full">
         <input
@@ -39,7 +42,7 @@ const AddNote = () => {
           placeholder="Title"
           ref={title}
           onFocus={(e) => e.target.select()}
-          className="text-blue-500 border-b-2 mb-3 py-2 font-bold focus:outline-none focus:border-b-blue-400"
+          className="text-blue-500 border-b-2 mb-3 py-2 focus:px-3 font-bold focus:outline-none focus:border-b-blue-400 dark:bg-slate-700 dark:text-blue-400"
         />
         <textarea
           cols="30"
@@ -47,11 +50,11 @@ const AddNote = () => {
           placeholder="Lorem ipsum"
           ref={content}
           spellCheck={false}
-          className="focus:outline-none focus:bg-blue-50 focus:py-2 focus:px-3 h-full"
+          className="focus:outline-none focus:bg-blue-50 focus:py-2 focus:px-3 h-full dark:bg-slate-800 dark:text-blue-100 dark:focus:bg-slate-700"
         ></textarea>
         <EditNoteButton onClick={handleClick} />
       </div>
-    </>
+    </div>
   );
 };
 

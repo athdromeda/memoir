@@ -26,7 +26,7 @@ const NotesWrapper = ({ children }) => {
   }
 
   return (
-    <div className={'m-6 mt-16 grid gap-4 grid-cols-' + column}>
+    <div className={'dark:bg-slate-800 p-6 pt-16 h-full grid gap-4 grid-cols-' + column}>
       {cardsColumn.map((e, i) => (
         <div key={i}>{e}</div>
       ))}
