@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import EditNoteButton from '../components/EditNoteButton';
+import TextField from '../components/TextField';
 import { addNote, deleteNote } from '../noteSlice';
 import generateNoteId from '../utils/generateNoteId';
 
@@ -61,14 +62,15 @@ const EditNote = () => {
           onFocus={(e) => e.target.select()}
           className="text-blue-500 border-b-2 mb-3 py-2 focus:px-3 font-bold focus:outline-none focus:border-b-blue-400 dark:bg-slate-700 dark:text-blue-400"
         />
-        <textarea
+        {/* <textarea
           cols="30"
           rows="15"
           value={content}
           onChange={(event) => setContent(event.target.value)}
           spellCheck={false}
           className="focus:outline-none focus:bg-blue-50 focus:py-2 focus:px-3 h-full dark:bg-slate-800 dark:text-blue-100 dark:focus:bg-slate-700"
-        ></textarea>
+        ></textarea> */}
+        <TextField activeContent={content} setContent={setContent}/>
         <EditNoteButton onClick={handleClick} />
       </div>
     </div>

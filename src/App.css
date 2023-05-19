@@ -3,3 +3,49 @@
   height: 100%;
   margin: 0;
 }
+
+.ProseMirror {
+  height: 100%;
+}
+
+.ProseMirror:focus {
+  outline: none;
+}
+
+.ProseMirror blockquote {
+  padding: 10px 12px 10px 12px;
+  margin: 8px 0 12px 0;
+  background-color: #02061741;
+  border: 0;
+  border-left: 4px solid rgb(0, 140, 255);
+}
+
+.ProseMirror pre {
+  padding: 10px 12px 10px 12px;
+  margin: 8px 0 12px 0;
+  border-radius: 8px;
+  background-color: #0206176b;
+}
+
+.ProseMirror h2 {
+  font-size: 1.2rem;
+}
+
+.ProseMirror em {
+  font-style: italic !important;
+}
+
+.ProseMirror hr {
+  margin: 48px 24px 48px 24px;
+  opacity: 60%;
+}
+
+.ProseMirror ul {
+  list-style-type: disc;
+  margin: 24px;
+}
+
+.ProseMirror ol {
+  list-style-type: upper-roman;
+  margin: 24px;
+}

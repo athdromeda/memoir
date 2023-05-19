@@ -1,25 +1,29 @@
+import { useState } from 'react';
 import { useRef } from 'react';
 import { ChevronLeft } from 'react-feather';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import EditNoteButton from '../components/EditNoteButton';
+import TextField from '../components/TextField';
 import { addNote } from '../noteSlice';
 import generateNoteId from '../utils/generateNoteId';
 
 const AddNote = () => {
+  const [content, setContent] = useState()
+  
   const navigate = useNavigate();
 
   const title = useRef('');
-  const content = useRef('');
+  // const content = useRef('');
 
   const dispatch = useDispatch();
   const handleClick = () => {
-    if (title.current.value && content.current.value) {
+    if (title.current.value && content) {
       dispatch(
         addNote({
           id: generateNoteId(),
           title: title.current.value,
-          content: content.current.value,
+          content: content,
         })
       );
     }
@@ -44,14 +48,15 @@ const AddNote = () => {
           onFocus={(e) => e.target.select()}
           className="text-blue-500 border-b-2 mb-3 py-2 focus:px-3 font-bold focus:outline-none focus:border-b-blue-400 dark:bg-slate-700 dark:text-blue-400"
         />
-        <textarea
+        {/* <textarea
           cols="30"
           rows="10"
           placeholder="Lorem ipsum"
           ref={content}
           spellCheck={false}
           className="focus:outline-none focus:bg-blue-50 focus:py-2 focus:px-3 h-full dark:bg-slate-800 dark:text-blue-100 dark:focus:bg-slate-700"
-        ></textarea>
+        ></textarea> */}
+        <TextField setContent={setContent}/>
         <EditNoteButton onClick={handleClick} />
       </div>
     </div>
