@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@reduxjs/toolkit': ^1.9.5
+  '@tiptap/extension-placeholder': ^2.0.3
   '@tiptap/pm': ^2.0.3
   '@tiptap/react': ^2.0.3
   '@tiptap/starter-kit': ^2.0.3
@@ -25,6 +26,7 @@ specifiers:
 
 dependencies:
   '@reduxjs/toolkit': 1.9.5_k4ae6lp43ej6mezo3ztvx6pykq
+  '@tiptap/extension-placeholder': 2.0.3_@tiptap+pm@2.0.3
   '@tiptap/pm': 2.0.3
   '@tiptap/react': 2.0.3_trsulnf46thcca2kr5qkklvg7q
   '@tiptap/starter-kit': 2.0.3_@tiptap+pm@2.0.3
@@ -885,6 +887,15 @@ packages:
       '@tiptap/core': ^2.0.0
     dependencies:
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
+    dev: false
+
+  /@tiptap/extension-placeholder/2.0.3_@tiptap+pm@2.0.3:
+    resolution: {integrity: sha512-Z42jo0termRAf0S0L8oxrts94IWX5waU4isS2CUw8xCUigYyCFslkhQXkWATO1qRbjNFLKN2C9qvCgGf4UeBrw==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0
+      '@tiptap/pm': ^2.0.0
+    dependencies:
+      '@tiptap/pm': 2.0.3
     dev: false
 
   /@tiptap/extension-strike/2.0.3_@tiptap+core@2.0.3:
