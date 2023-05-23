@@ -25,17 +25,25 @@ const Tags = ({ content }) => {
 const Note = ({ id, title, content }) => {
   const navigate = useNavigate();
 
+  function cropContent(str) {
+    const limit = 100;
+    if (str.length > limit) {
+      return str.slice(0, limit) + '...';
+    }
+    return str;
+  }
+  
   return (
     <div
       onClick={() => navigate('/edit/' + id)}
-      className="bg-blue-50 dark:bg-slate-700 w-full px-4 py-4 mb-4 rounded-md cursor-pointer"
+      className="bg-blue-50 dark:bg-slate-700 w-full px-4 py-4 mb-4 rounded-md cursor-pointer max-h-80 flex flex-wrap"
     >
       <h3 className="text-lg text-blue-600 dark:text-blue-400 font-medium leading-tight mb-3">
         {title}
       </h3>
       <div
         className="text-slate-500 dark:text-slate-400"
-        dangerouslySetInnerHTML={{ __html: content }}
+        dangerouslySetInnerHTML={{ __html: cropContent(content) }}
       ></div>
       <Tags content={content} />
     </div>
