@@ -17,7 +17,6 @@ specifiers:
   postcss: ^8.4.23
   react: ^18.2.0
   react-dom: ^18.2.0
-  react-feather: ^2.0.10
   react-redux: ^8.0.5
   react-router-dom: ^6.11.1
   remixicon-react: ^1.0.0
@@ -34,7 +33,6 @@ dependencies:
   postcss: 8.4.23
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
-  react-feather: 2.0.10_react@18.2.0
   react-redux: 8.0.5_lhsvdmrfrkqkmxtqosqgyd3k4i
   react-router-dom: 6.11.1_biqbaboplfbrettd7655fr4n2y
   remixicon-react: 1.0.0_react@18.2.0
@@ -2424,6 +2422,7 @@ packages:
       loose-envify: 1.4.0
       object-assign: 4.1.1
       react-is: 16.13.1
+    dev: true
 
   /prosemirror-changeset/2.2.1:
     resolution: {integrity: sha512-J7msc6wbxB4ekDFj+n9gTW/jav/p53kdlivvuppHsrZXCaQdVgRghoZbSS3kwrRyAstRVQ4/+u5k7YfLgkkQvQ==}
@@ -2587,15 +2586,6 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
-    dev: false
-
-  /react-feather/2.0.10_react@18.2.0:
-    resolution: {integrity: sha512-BLhukwJ+Z92Nmdcs+EMw6dy1Z/VLiJTzEQACDUEnWMClhYnFykJCGWQx+NmwP/qQHGX/5CzQ+TGi8ofg2+HzVQ==}
-    peerDependencies:
-      react: '>=16.8.6'
-    dependencies:
-      prop-types: 15.8.1
-      react: 18.2.0
     dev: false
 
   /react-is/16.13.1:

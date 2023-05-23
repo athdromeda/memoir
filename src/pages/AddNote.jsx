@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useRef } from 'react';
-import { ChevronLeft } from 'react-feather';
+import ArrowLeftSLine from 'remixicon-react/ArrowLeftSLineIcon';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import EditNoteButton from '../components/EditNoteButton';
@@ -14,7 +14,10 @@ const Header = () => {
   return (
     <div className="flex gap-2 px-4 py-4">
       <button>
-        <ChevronLeft className="text-blue-500" onClick={() => navigate('/')} />
+        <ArrowLeftSLine
+          className="text-blue-500"
+          onClick={() => navigate('/')}
+        />
       </button>
       <h1 className="font-light select-none dark:text-blue-100">Add Note</h1>
     </div>

@@ -1,5 +1,5 @@
-import { Sun } from 'react-feather';
-import { Moon } from 'react-feather';
+import SunLineIcon from 'remixicon-react/SunLineIcon';
+import MoonLineIcon from 'remixicon-react/MoonLineIcon';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleTheme } from '../themeSlice';
 
@@ -19,9 +19,9 @@ const Header = () => {
       <h1 className="text-xl select-none">Memoir</h1>
       <button className="focus:outline-none" onClick={handleToggleTheme}>
         {darkTheme ? (
-          <Moon className="text-blue-500 dark:text-amber-400" />
+          <MoonLineIcon className="text-blue-500 dark:text-amber-400" />
         ) : (
-          <Sun className="text-blue-500 dark:text-teal-500" />
+          <SunLineIcon className="text-blue-500 dark:text-teal-500" />
         )}
       </button>
     </div>

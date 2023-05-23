@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
-import { Trash } from 'react-feather';
-import { ChevronLeft } from 'react-feather';
+import ArrowLeftSLine from 'remixicon-react/ArrowLeftSLineIcon';
+import DeleteBinLineIcon from 'remixicon-react/DeleteBinLineIcon';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
@@ -15,12 +15,12 @@ const Header = ({ navigateTo, handleDelete }) => {
     <div className="flex justify-between px-4 py-4">
       <div className="flex gap-2">
         <button>
-          <ChevronLeft className="text-blue-500" onClick={navigateTo} />
+          <ArrowLeftSLine className="text-blue-500" onClick={navigateTo} />
         </button>
         <h1 className="font-light select-none dark:text-blue-100">Edit Note</h1>
       </div>
       <button onClick={handleDelete}>
-        <Trash className="text-pink-500 mr-2" />
+        <DeleteBinLineIcon className="text-pink-500 mr-2" />
       </button>
     </div>
   );
@@ -46,7 +46,7 @@ const EditNote = () => {
       })
     );
   };
-  
+
   const handleDelete = () => {
     dispatch(deleteNote(id));
     navigate('/');
