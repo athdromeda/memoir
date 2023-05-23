@@ -1,6 +1,27 @@
 /* eslint-disable react/prop-types */
 import { useNavigate } from 'react-router-dom';
 
+const Tags = ({ content }) => {
+  function collectTags(str) {
+    const regex = /#(\w+)/g;
+    const tags = [...new Set(str.match(regex))];
+    return tags || [];
+  }
+
+  return (
+    <div className="flex flex-wrap gap-2 mt-3 mb-1">
+      {collectTags(content).map((tag, i) => (
+        <div
+          className="flex bg-blue-500 text-white w-fit py-1 px-3 text-xs rounded-full"
+          key={i}
+        >
+          {tag}
+        </div>
+      ))}
+    </div>
+  );
+};
+
 const Note = ({ id, title, content }) => {
   const navigate = useNavigate();
 
@@ -16,6 +37,7 @@ const Note = ({ id, title, content }) => {
         className="text-slate-500 dark:text-slate-400"
         dangerouslySetInnerHTML={{ __html: content }}
       ></div>
+      <Tags content={content} />
     </div>
   );
 };
